@@ -1,5 +1,5 @@
 class Fractal
   def generate
-	  "fractal"
+    "fractal"
   end
 end
