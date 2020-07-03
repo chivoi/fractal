@@ -26,21 +26,21 @@ describe ComplexNumber do
   	end
   end
 
-  # describe '#multiply' do
-  # 	it 'will multiply two numbers' do
-	 #  	# input
-	 #  	first = ComplexNumber.new(2, -3) # a, b
-	 #  	second = ComplexNumber.new(-3, 4) # x, y
+  describe '#multiply' do
+  	it 'will multiply two numbers' do
+	  	# input
+	  	first = ComplexNumber.new(2, -3) # a, b
+	  	second = ComplexNumber.new(-3, 4) # x, y
 	  	
-	 #  	#expected result
-	 #  	# i * i = -1
-	 #  	#(a + ib)*(x + iy) = ax + iay + ibx - by
-	 #  	# re = ax - by = 2 * (-3) - (-3)*4 = -6 + 12 = 6
-	 #  	# i * (ay + bx) = 2*4 + (-3)*(-3) = 8 + 9 = 17  
-	 #  	mul = ComplexNumber.new(6, 17)
-	 #  	result = first.multiply(second)
+	  	#expected result
+	  	# i * i = -1
+	  	#(a + ib)*(x + iy) = ax + iay + ibx - by
+	  	# re = ax - by = 2 * (-3) - (-3)*4 = -6 + 12 = 6
+	  	# i * (ay + bx) = 2*4 + (-3)*(-3) = 8 + 9 = 17  
+	  	mul = ComplexNumber.new(6, 17)
+	  	result = first.multiply(second)
 
-	 #  	expect(result).to eq mul 
-	 #  end 
-  # end
+	  	expect(result).to eq mul 
+	  end 
+  end
 end
