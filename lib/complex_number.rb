@@ -6,8 +6,8 @@ class ComplexNumber
 		@im = im
 	end
 
-	def ==(another)
-	  another.re == self.re && another.im == self.im
+	def ==(second)
+	  second.re == self.re && second.im == self.im
 	end
 
 	# TODO: static function
@@ -18,5 +18,8 @@ class ComplexNumber
 	end
 
 	def multiply(second)
+		new_re = (re * second.re) - (im * second.im)
+		new_im = (re * seconf.im) + (im * second.re)
+		ComplexNumber.new(new_re, new_im)
 	end
 end
