@@ -19,7 +19,7 @@ class ComplexNumber
 
 	def multiply(second)
 		new_re = (re * second.re) - (im * second.im)
-		new_im = (re * seconf.im) + (im * second.re)
+		new_im = (re * second.im) + (im * second.re)
 		ComplexNumber.new(new_re, new_im)
 	end
 end
