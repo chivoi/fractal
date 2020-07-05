@@ -15,12 +15,12 @@ describe ComplexNumber do
   describe '#add' do
   	it 'will add one number to another' do
 	  	# input
-	  	a = ComplexNumber.new(2, -3)
-	  	b = ComplexNumber.new(-3, 4)
+	  	first = ComplexNumber.new(2, -3)
+	  	second = ComplexNumber.new(-3, 4)
 	  	
 	  	#expected result
 	  	expected = ComplexNumber.new(-1, 1)
-	  	result = a.add(b)
+	  	result = first.add(second)
 	  	# (a + ib) + (x + iy) = (a + x) + i(b +y)
 	  	expect(result).to eq expected
   	end
@@ -42,5 +42,21 @@ describe ComplexNumber do
 
 	  	expect(result).to eq mul 
 	  end 
+
+	describe '#absoluteval' do
+  	it 'will calculate the absolute value of a number' do
+	  	# input
+	  	num = ComplexNumber.new(2, -3) # a, b
+	  	
+	  	#expected result
+	  	#mod = sqrt(a**2 + b**2)
+
+	  	absolute_val = ComplexNumber.new(3.605551275463989)
+	  	result = num.absoluteval
+
+	  	expect(result).to eq absoluteval 
+	  end
+	end
+
   end
 end

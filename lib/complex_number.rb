@@ -1,4 +1,7 @@
 class ComplexNumber
+
+	include Math
+
 	attr_reader :re, :im
 
 	def initialize(re, im)
@@ -22,4 +25,13 @@ class ComplexNumber
 		new_im = (re * second.im) + (im * second.re)
 		ComplexNumber.new(new_re, new_im)
 	end
+
+
+	def absoluteval(number, re, im)
+		square = 
+		new_num = Math.sqrt(re**2 + im**2)
+		ComplexNumber.new(new_num)
+	end
+
+
 end
