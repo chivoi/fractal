@@ -26,12 +26,13 @@ class ComplexNumber
 		ComplexNumber.new(new_re, new_im)
 	end
 
-
-	def absoluteval(number, re, im)
-		square = 
-		new_num = Math.sqrt(re**2 + im**2)
-		ComplexNumber.new(new_num)
+	def absolute_value_squared
+			re**2 + im**2
 	end
+
+	#def absolute_value
+		#Math.sqrt(re**2 + im**2)
+	#end
 
 
 end
