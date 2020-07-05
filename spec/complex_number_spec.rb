@@ -55,27 +55,7 @@ describe ComplexNumber do
 	  	result = num.absolute_value_squared
 
 	  	expect(result).to eq module_squared 
-	  end
-	end 
-
-=begin --> Another way to do the module <--
-	describe '#absolute_value' do
-  	it 'will calculate the absolute value of a number' do
-	  	# input
-	  	num = ComplexNumber.new(2, -3) # a, b
-	  	
-	  	#expected result
-	  	#mod = sqrt(a**2 + b**2)
-
-	  	absolute_value = 3.605551275463989
-	  	result = num.absolute_value
-
-	  	expect(result).to be_within(0.00000001).of(absolute_value) 
-	  end
-	end 
-=end
-	
-	
-
+	  	end
+		end 
   end
 end

@@ -29,10 +29,5 @@ class ComplexNumber
 	def absolute_value_squared
 			re**2 + im**2
 	end
-
-	#def absolute_value
-		#Math.sqrt(re**2 + im**2)
-	#end
-
-
 end
+
