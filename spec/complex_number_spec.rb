@@ -10,6 +10,13 @@ describe ComplexNumber do
     end
   end
 
+  describe '#to_s' do
+    it 'will pretty print a complex number' do
+    	c = ComplexNumber.new(2, 3)
+      expect("#{c}").to eq "ComplexNumber[2 + 3i]"
+    end
+  end
+
   # z -> z^2 + c
 
   describe '#add' do
@@ -24,6 +31,14 @@ describe ComplexNumber do
 	  	# (a + ib) + (x + iy) = (a + x) + i(b +y)
 	  	expect(result).to eq expected
   	end
+
+  	it 'will allow using + for addition' do
+	  	first = ComplexNumber.new(2, -3)
+	  	second = ComplexNumber.new(-3, 4)
+
+	  	expected = ComplexNumber.new(-1, 1)
+	  	expect(first + second).to eq expected  		
+  	end	
   end
 
   describe '#multiply' do
