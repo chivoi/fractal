@@ -23,6 +23,12 @@ class ComplexNumber
 		new_im = im + second.im
 		ComplexNumber.new(new_re, new_im)
 	end
+		
+	def +(second)
+		new_re = re + second.re
+		new_im = im + second.im
+		ComplexNumber.new(new_re, new_im)
+	end
 
 	def multiply(second)
 		new_re = (re * second.re) - (im * second.im)
