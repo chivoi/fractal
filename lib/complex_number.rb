@@ -13,8 +13,18 @@ class ComplexNumber
 	  second.re == self.re && second.im == self.im
 	end
 
+	def to_s
+		"ComplexNumber[#{re} + #{im}i]"
+	end
+
 	# TODO: static function
 	def add(second)
+		new_re = re + second.re
+		new_im = im + second.im
+		ComplexNumber.new(new_re, new_im)
+	end
+		
+	def +(second)
 		new_re = re + second.re
 		new_im = im + second.im
 		ComplexNumber.new(new_re, new_im)
