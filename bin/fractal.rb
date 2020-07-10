@@ -35,11 +35,12 @@ limit_detector = LimitDetector.new(
 
 # for x in 0..COLS
 # 	for y in 0..ROWS
-xs = 0..COLS
-ys = 0..ROWS
-points = xs.zip(ys).flatten
+xs = [0..COLS]
+ys = [0..ROWS]
+points = xs.product(ys)
+puts "Points: #{points}"
 
-chars = points.map do |(x, y)|
+chars = points.each.map do |x, y|
 	puts "x=#{x}, y=#{y}"
 end
 
