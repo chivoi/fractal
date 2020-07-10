@@ -1,4 +1,4 @@
-require 'fractal'
+require 'screen'
 
 #                   real_width, view_width
 #  (origin (re, im))------
@@ -28,10 +28,16 @@ describe Screen do
 	end
 
   describe '#convert' do
-    it 'will correctly return 0,0' do
+    it 'will correctly return origin' do
     	result = screen.convert(0, 0)
+      expect(result).to eq ComplexNumber.new(-0.5, 0.5)
+    end
+
+    it 'will correctly return center' do
+    	result = screen.convert(5, 5)
       expect(result).to eq ComplexNumber.new(0.0, 0.0)
     end
+  	#TODO test with a random point (8,7)
   end
 end
 
