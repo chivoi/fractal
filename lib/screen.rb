@@ -24,8 +24,8 @@ class Screen
 	def convert(view_x, view_y)
 		dx = view_x * cell_width
 		dy = view_y * cell_height
-		real_x = origin.re + dx
-		real_y = origin.im - dy
+		real_x = origin_re + dx
+		real_y = origin_im - dy
 		return ComplexNumber.new(real_x, real_y)
 	end
 end

@@ -10,6 +10,8 @@ puts "============================"
 COLS = 40
 ROWS = 20
 MAX_ITERATIONS = 12
+# value from here https://mathworld.wolfram.com/MandelbrotSet.html
+CONSTANT = ComplexNumber.new(-0.75, 0.1)
 
 screen = Screen.new(
 	origin_re: -1.5,
@@ -21,13 +23,14 @@ screen = Screen.new(
 )
 
 renderer = Renderer.new(
-	max_interations: MAX_ITERATIONS, 
+	max_iterations: MAX_ITERATIONS, 
 	chars: ".,-~:;=!*#$@"
 )
 
 limit_detector = LimitDetector.new(
-	max_interations: MAX_ITERATIONS,
-	max_absolute_value: 4
+	max_iterations: MAX_ITERATIONS,
+	max_absolute_value: 4,
+	function: lambda { |z| z.multiply(z) + add(CONSTANT) }
 )
 
 # for x in 0..COLS

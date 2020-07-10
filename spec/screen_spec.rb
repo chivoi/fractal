@@ -19,7 +19,8 @@ require 'screen'
 describe Screen do
 	let(:screen) do
 		Screen.new(
-			origin: ComplexNumber.new(-0.5, 0.5), 
+			origin_re:-0.5,
+			origin_im: 0.5, 
 			real_width: 1.0, 
 			real_height: 1.0,
 			view_width: 10,
