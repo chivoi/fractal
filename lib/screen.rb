@@ -1,8 +1,17 @@
 class Screen
-	attr_reader :cell_width, :cell_height, :origin, :real_width, :real_height, :view_width, :view_height
+	attr_reader :cell_width, :cell_height, :origin_re, :origin_im, :real_width, :real_height,	:view_width, :view_height
 
-	def initialize(origin:, real_width:, real_height:, view_width:, view_height:)
-		@origin = origin 
+	 # weird indentation
+	def initialize(
+		origin_re:,
+		origin_im:, 
+		real_width:, 
+		real_height:, 
+		view_width:, 
+		view_height:)
+
+		@origin_re = origin_re
+		@origin_im = origin_im
 		@real_width = real_width 
 		@real_height = real_height
 		@view_width = view_width
