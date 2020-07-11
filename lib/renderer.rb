@@ -4,7 +4,7 @@ class Renderer
 	def initialize(max_iterations:, chars:)
 		@max_iterations = max_iterations
 		@chars = chars
-		@iterations_per_char = max_iterations / chars_count
+		@iterations_per_char = max_iterations.to_f / chars_count
 	end
 
 	def render(iteration)
@@ -13,9 +13,13 @@ class Renderer
 			raise ArgumentError.new(message) 
 		end
 
-		index = (iteration / iterations_per_char).round
+		index = (iteration / iterations_per_char).floor(-1)
 		result = chars[index]
-		puts "index:#{index} result:#{result}"
+
+		puts "iteration: #{iteration} index:#{index} result:#{result}"
+		
+		raise RuntimeError.new("empty char") if result.nil? or result.empty?
+
 		result
 	end
 

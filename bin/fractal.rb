@@ -9,6 +9,7 @@ ROWS = 40
 MAX_ITERATIONS = 11
 # value from here https://mathworld.wolfram.com/MandelbrotSet.html
 CONSTANT = ComplexNumber.new(-0.75, 0.1)
+SYMBOL_MAP = ".,-~:;=!*\#$@"
 
 screen = Screen.new(
 	origin_re: -1.5,
@@ -21,7 +22,7 @@ screen = Screen.new(
 
 renderer = Renderer.new(
 	max_iterations: MAX_ITERATIONS, 
-	chars: ".,-~:;=!*#$@"
+	chars: SYMBOL_MAP
 )
 
 limit_detector = LimitDetector.new(
@@ -43,6 +44,7 @@ for x in 0..COLS
 	for y in 0..ROWS
 		z = screen.convert(x, y)
 		iterations = limit_detector.iterations(z)
+		puts "GOTCHA: #{iterations}" if iterations >= SYMBOL_MAP.length
 		cell = renderer.render(iterations)
 		output.append(cell)
 	end
