@@ -2,7 +2,7 @@ class ComplexNumber
 
 	include Math
 
-	attr_reader :re, :im
+	attr_accessor :re, :im
 
 	def initialize(re, im)
 		@re = re

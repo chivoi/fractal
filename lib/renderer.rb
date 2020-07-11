@@ -16,7 +16,7 @@ class Renderer
 		index = (iteration / iterations_per_char).floor(-1)
 		result = chars[index]
 
-		puts "iteration: #{iteration} index:#{index} result:#{result}"
+		#puts "iteration: #{iteration} index:#{index} result:#{result}"
 		
 		raise RuntimeError.new("empty char") if result.nil? or result.empty?
 
