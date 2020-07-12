@@ -6,8 +6,8 @@ require './lib/renderer'
 
 require 'io/console'
 
-COLS = 20
-ROWS = 40
+COLS = 30
+ROWS = 120
 MAX_ITERATIONS = 11
 # value from here https://mathworld.wolfram.com/MandelbrotSet.html
 CONSTANT = ComplexNumber.new(-0.75, 0.1)
@@ -28,8 +28,8 @@ limit_detector = LimitDetector.new(
 screen = Screen.new(
 	origin_re: -1.5,
 	origin_im: 1.5,
-	real_width: 3.0,
-	real_height: 3.0,
+	real_width: 1.0,
+	real_height: 2.0,
 	view_width: COLS,
 	view_height: ROWS
 )
