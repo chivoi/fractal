@@ -8,7 +8,7 @@ require 'io/console'
 terminal_rows, terminal_cols = IO.console.winsize
 
 SYMBOL_MAP = "@MBHENR\#KWXDFPQASUZbdehx*8Gm&04LOVYkpq5Tagns69owz$CIu23Jcfry%1v7l+it[] {}?j|()=~!-/<>\"^_';,:`. ".reverse
-fractal_rows = terminal_rows - 6
+fractal_rows = terminal_rows - 10
 fractal_cols = terminal_cols - 1
 
 MAX_ITERATIONS = SYMBOL_MAP.length - 1
@@ -30,7 +30,7 @@ limit_detector = LimitDetector.new(
 screen = Screen.new(
 	origin_re: -1.5,
 	origin_im: 1.5,
-	real_width: 1.0,
+	real_width: 3.0,
 	real_height: 2.0,
 	view_width: fractal_cols, # TODO
 	view_height: fractal_rows
@@ -39,8 +39,8 @@ screen = Screen.new(
 while true
 	all_iterations = []
 	output = []
-	for x in 0..fractal_cols
-		for y in 0..fractal_rows
+	for y in 0..fractal_rows
+		for x in 0..fractal_cols
 			z = screen.convert(x, y)
 			iterations = limit_detector.iterations(z)
 			all_iterations.append(iterations)
@@ -59,6 +59,7 @@ while true
 	# puts "Histogram"
 	# puts "#{histogram}"
 
+	system "clear"
 	puts "Fractal ASCII generator v1.0"
 	puts "============================"
 
@@ -78,13 +79,13 @@ while true
 	when 'x'
 		break
 	when 'w'
-		screen.origin_re -= screen.real_width/10
-	when 's'
-		screen.origin_re += screen.real_width/10
-	when 'q'
-		screen.origin_im += screen.real_height/10
-	when 'a'
 		screen.origin_im -= screen.real_height/10
+	when 's'
+		screen.origin_im += screen.real_height/10
+	when 'q'		
+		screen.origin_re += screen.real_width/10
+	when 'a'		
+		screen.origin_re -= screen.real_width/10
 	when 'e' # zoom out
 		dx = screen.origin_re.abs()/10
 		dy = screen.origin_im.abs()/10
