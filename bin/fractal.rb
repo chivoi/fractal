@@ -5,11 +5,13 @@ require './lib/screen'
 require './lib/renderer'
 
 require 'io/console'
+require 'tty-box'
+
 terminal_rows, terminal_cols = IO.console.winsize
 
 SYMBOL_MAP = "@MBHENR\#KWXDFPQASUZbdehx*8Gm&04LOVYkpq5Tagns69owz$CIu23Jcfry%1v7l+it[] {}?j|()=~!-/<>\"^_';,:`. ".reverse
-fractal_rows = terminal_rows - 10
-fractal_cols = terminal_cols - 1
+fractal_rows = terminal_rows - 12
+fractal_cols = terminal_cols - 5
 
 MAX_ITERATIONS = SYMBOL_MAP.length - 1
 # value from here https://mathworld.wolfram.com/MandelbrotSet.html
@@ -70,7 +72,7 @@ while true
 		" view=[#{screen.view_width}, #{screen.view_height}]"
 
 	puts "formula: z=z^2 + #{CONSTANT}"
-	puts "#{output.join}"
+	print TTY::Box.frame "#{output.join}"
 
 	puts "Enter command: `x` to quit "
 	key = STDIN.getch
