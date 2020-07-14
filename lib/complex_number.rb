@@ -14,7 +14,7 @@ class ComplexNumber
 	end
 
 	def to_s
-		"ComplexNumber[#{re} + #{im}i]"
+		"ComplexNumber[#{re} #{im>0 ? "+" : "-"} #{im.abs}i]"
 	end
 
 	# TODO: static function

@@ -15,6 +15,11 @@ describe ComplexNumber do
     	c = ComplexNumber.new(2, 3)
       expect("#{c}").to eq "ComplexNumber[2 + 3i]"
     end
+
+    it 'will pretty print a complex number with negative im' do
+    	c = ComplexNumber.new(2, -3)
+      expect("#{c}").to eq "ComplexNumber[2 - 3i]"
+    end
   end
 
   # z -> z^2 + c

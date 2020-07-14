@@ -5,13 +5,15 @@ require './lib/screen'
 require './lib/renderer'
 
 require 'io/console'
+terminal_rows, terminal_cols = IO.console.winsize
 
-COLS = 30
-ROWS = 120
-MAX_ITERATIONS = 11
+SYMBOL_MAP = "@MBHENR\#KWXDFPQASUZbdehx*8Gm&04LOVYkpq5Tagns69owz$CIu23Jcfry%1v7l+it[] {}?j|()=~!-/<>\"^_';,:`. ".reverse
+fractal_rows = terminal_rows - 6
+fractal_cols = terminal_cols - 1
+
+MAX_ITERATIONS = SYMBOL_MAP.length - 1
 # value from here https://mathworld.wolfram.com/MandelbrotSet.html
 CONSTANT = ComplexNumber.new(-0.75, 0.1)
-SYMBOL_MAP = "@MBHENR\#KWXDFPQASUZbdehx*8Gm&04LOVYkpq5Tagns69owz$CIu23Jcfry%1v7l+it[] {}?j|()=~!-/<>\"^_';,:`. ".reverse
 
 constant = CONSTANT
 renderer = Renderer.new(
@@ -30,22 +32,32 @@ screen = Screen.new(
 	origin_im: 1.5,
 	real_width: 1.0,
 	real_height: 2.0,
-	view_width: COLS,
-	view_height: ROWS
+	view_width: fractal_cols, # TODO
+	view_height: fractal_rows
 )
 
 while true
+	all_iterations = []
 	output = []
-	for x in 0..COLS
-		for y in 0..ROWS
+	for x in 0..fractal_cols
+		for y in 0..fractal_rows
 			z = screen.convert(x, y)
 			iterations = limit_detector.iterations(z)
-			puts "GOTCHA: #{iterations}" if iterations >= SYMBOL_MAP.length
+			all_iterations.append(iterations)
+			#puts "GOTCHA: #{iterations}" if iterations >= SYMBOL_MAP.length
 			cell = renderer.render(iterations)
 			output.append(cell)
 		end
 		output.append("\n")
 	end
+
+	# histogram = all_iterations
+	# 	.group_by { |v| v }
+	# 	.map { |bin, data| [bin, data.size] }
+	# 	.sort_by { |e| e[0] }
+
+	# puts "Histogram"
+	# puts "#{histogram}"
 
 	puts "Fractal ASCII generator v1.0"
 	puts "============================"
