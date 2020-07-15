@@ -9,6 +9,7 @@ class Renderer
 
 	def render(iterations)
 		index = iterations / iterations_per_char
+		index.round
 		chars[index]
 	end
 end

@@ -30,7 +30,7 @@ limit_detector = LimitDetector.new(
 screen = Screen.new(
 	origin: ComplexNumber.new(-1.5, 1.5), 
 	real_width: 6.0, 
-	real_height: 4
+	real_height: 4,
 	view_width: width,
 	view_height: height
 )
