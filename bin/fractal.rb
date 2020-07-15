@@ -11,7 +11,7 @@ puts "Created by chivoii and kirghoff"
 
 chars = "@MBHENR\#KWXDFPQASUZbdehx*8Gm&04LOVYkpq5Tagns69owz$CIu23Jcfry%1v7l+it[]{}?j|()=~!-/<>\"^_';,:`. ".reverse
 #chars = '.,-~:;=!*\#$@ '
-puts "Chars length is #{chars.length}"
+#puts "Chars length is #{chars.length}"
 width = 80
 height = 30
 
@@ -20,7 +20,7 @@ renderer = Renderer.new(
 	chars: chars
 )
 
-constant = ComplexNumber.new(-0.01, 0.43)
+constant = ComplexNumber.new(-0.01, 0.45)
 function = lambda { |z| z.multiply(z) + constant}
 
 limit_detector = LimitDetector.new(
