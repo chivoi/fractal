@@ -1,4 +1,6 @@
-#!/usr/bin/ruby
+#!/usr/bin/env ruby
+
+require "tty-box"
 
 require "./lib/complex_number"
 require "./lib/limit_detector"
@@ -50,5 +52,11 @@ for y in 0..height
 	output << "\n" 
 end
 
-print "#{output.join}"
+#TODO make the box the size of the terminal + controls
+
+box = TTY::Box.frame(width: 85, height: 35, border: :thick) do 
+	"#{output.join}"
+end
+
+print box
 
