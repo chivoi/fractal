@@ -1,6 +1,7 @@
 #!/usr/bin/env ruby
 
 require "tty-box"
+require "tty-screen"
 
 require "./lib/complex_number"
 require "./lib/limit_detector"
@@ -14,8 +15,8 @@ puts "Created by chivoii and kirghoff"
 chars = "@MBHENR\#KWXDFPQASUZbdehx*8Gm&04LOVYkpq5Tagns69owz$CIu23Jcfry%1v7l+it[]{}?j|()=~!-/<>\"^_';,:`. ".reverse
 #chars = '.,-~:;=!*\#$@ '
 #puts "Chars length is #{chars.length}"
-width = 80
-height = 30
+width = TTY::Screen.cols - 5
+height = TTY::Screen.rows
 
 renderer = Renderer.new(
 	max_iterations: chars.length, 
@@ -54,9 +55,9 @@ end
 
 #TODO make the box the size of the terminal + controls
 
-box = TTY::Box.frame(width: 85, height: 35, border: :thick) do 
+box = TTY::Box.frame(width: TTY::Screen.cols, height: TTY::Screen.rows, border: :thick) do
 	"#{output.join}"
 end
-
+	
 print box
 
