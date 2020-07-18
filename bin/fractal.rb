@@ -12,6 +12,7 @@ puts "Fractal generator version 0.0.1"
 puts "==============================="
 puts "Created by chivoii and kirghoff"
 
+#chars = "─━│┃┄┅┆┇┈┉┊┋┌┍┎┏┐┑┒┓└┕┖┗┘┙┚┛├┝┞┟┠┡┢┣┤┥┦┧┨┩┪┫┬┭┮┯┰┱┲┳┴┵┶┷┸┹┺┻┼┽┾┿╀╁╂╃╄╅╆╇╈╉╊╋"
 chars = "@MBHENR\#KWXDFPQASUZbdehx*8Gm&04LOVYkpq5Tagns69owz$CIu23Jcfry%1v7l+it[]{}?j|()=~!-/<>\"^_';,:`. ".reverse
 #chars = '.,-~:;=!*\#$@ '
 #puts "Chars length is #{chars.length}"
