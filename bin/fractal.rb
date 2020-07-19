@@ -33,7 +33,7 @@ screen = Screen.new(
 	origin_re: -1.5,
 	origin_im: 1.5,
 	real_width: 3.0,
-	real_height: 2.0,
+	real_height: 3.0,
 	view_width: fractal_cols, # TODO
 	view_height: fractal_rows
 )
@@ -88,7 +88,7 @@ while true
 		screen.origin_re += screen.real_width/10
 	when 'a'		
 		screen.origin_re -= screen.real_width/10
-	when 'e' # zoom out
+	when 'e' # zoom in
 		dx = screen.origin_re.abs()/10
 		dy = screen.origin_im.abs()/10
 		screen.origin_re -= dx
