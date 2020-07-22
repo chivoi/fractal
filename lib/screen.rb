@@ -3,6 +3,8 @@ class Screen
 
 	def initialize(origin:, real_width:, real_height:, view_width:, view_height:)
 		@origin = origin 
+		#@origin_re = origin_re
+		#@origin_im = origin_im
 		@real_width = real_width 
 		@real_height = real_height
 		@view_width = view_width

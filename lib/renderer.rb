@@ -9,7 +9,7 @@ class Renderer
 
 	def render(iterations)
 		raise ArgumentError, "#{iterations} > #{max_iterations}!" if iterations >= max_iterations 
-		index = (iterations / iterations_per_char).round
+		index = (iterations / iterations_per_char).floor - 1
 		chars[index]
 	end
 end

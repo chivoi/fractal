@@ -2,6 +2,7 @@
 
 require "tty-box"
 require "tty-screen"
+require "io/console"
 
 require "./lib/complex_number"
 require "./lib/limit_detector"
@@ -35,11 +36,31 @@ limit_detector = LimitDetector.new(
 
 screen = Screen.new(
 	origin: ComplexNumber.new(-1.5, 1.5), 
+	#origin_re: -1.5,
+	#origin_im: 1.5,
 	real_width: 3.0, 
 	real_height: 3.0,
 	view_width: width,
 	view_height: height
 )
+
+puts "Origin = #{screen.origin.re} + #{screen.origin.im}i"
+puts "Press w,a,s,d to change shape, x to exit"
+
+key = STDIN.getch
+
+case key
+	when "w"
+		screen.origin.im += screen.real_height / 10
+	when "s"
+		screen.origin.im -= screen.real_height / 10
+	when "a"
+		screen.origin.re -= screen.real_width / 10
+	when "d"
+		screen.origin.re += screen.real_width / 10
+	else 
+		puts "Change fractal shape with wsad keys"
+end
 
 output = []
 
@@ -53,8 +74,6 @@ for y in 0..height
 	end
 	output << "\n" 
 end
-
-#TODO make the box the size of the terminal + controls
 
 box = TTY::Box.frame(width: TTY::Screen.cols, height: TTY::Screen.rows, border: :thick) do
 	"#{output.join}"
