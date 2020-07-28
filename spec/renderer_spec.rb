@@ -22,9 +22,9 @@ describe Renderer do
       expect(result).to eq ';'
     end
 
-    #it 'will raise an error if out of bounds' do
-    	#expect { Renderer.render(100) }.to raise_error
-  	#end
+    it 'will raise an error if out of bounds' do
+      expect { renderer.render(100) }.to raise_error(ArgumentError)
+  	end
 
     #TODO: Create test when chars is not even with max_iterations
     

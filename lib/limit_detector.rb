@@ -12,6 +12,7 @@ class LimitDetector
 		iterations = 0
 		loop do
 			current = function.call(current)
+			# puts "LD #{number}, #{current}, #{iterations}"
 			iterations += 1
 			break if iterations >= max_iterations
 			break if current.absolute_value_squared >= max_absolute_value

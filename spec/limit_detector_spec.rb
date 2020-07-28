@@ -7,7 +7,7 @@ describe LimitDetector do
       it 'will tell how many iterations needed to go to infinity' do
         #-----------------------------------
         # set up
-        constant = ComplexNumber.new(2, 0)
+        constant = ComplexNumber.new(0, 2)
         function = lambda { |z| z.add(constant) } # z**2 + c
 
         limit_detector = LimitDetector.new(
