@@ -3,13 +3,15 @@ class Screen
 
 	def initialize(origin:, real_width:, real_height:, view_width:, view_height:)
 		@origin = origin 
+		#@origin_re = origin_re
+		#@origin_im = origin_im
 		@real_width = real_width 
 		@real_height = real_height
 		@view_width = view_width
 		@view_height = view_height
 
-		@cell_width = real_width / view_width
-		@cell_height = real_height / view_height
+		@cell_width = real_width.to_f / view_width
+		@cell_height = real_height.to_f / view_height
 	end
 
 	def convert(view_x, view_y)

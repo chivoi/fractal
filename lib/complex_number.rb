@@ -2,7 +2,7 @@ class ComplexNumber
 
 	include Math
 
-	attr_reader :re, :im
+	attr_accessor :re, :im
 
 	def initialize(re, im)
 		@re = re
@@ -37,7 +37,13 @@ class ComplexNumber
 	end
 
 	def absolute_value_squared
-			re**2 + im**2
+		re**2 + im**2
 	end
+
+	def absolute_value
+		Math.sqrt(re**2 + im**2)
+	end
+
+
 end
 
