@@ -53,7 +53,8 @@ loop do
 	for y in 0..height
 		for x in 0..width
 			number = screen.convert(x, y)
-			iterations = limit_detector.iterations(number)
+			constant = number
+			iterations = limit_detector.iterations(ComplexNumber.new(0.0, 0.0))
 			character = renderer.render(iterations)
 			output << character 
 			# puts "#{x}, #{y}, #{number}, #{iterations}, #{character}"
