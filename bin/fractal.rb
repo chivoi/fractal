@@ -46,7 +46,7 @@ loop do
 	puts "==============================="
 	puts "Created by chivoii and kirghoff"
 
-	puts "W,A,S,D to move, I,J,K,L to change shape, x to exit"
+	puts "Press w,a,s,d to move, i,j,k,l to change shape or x to exit"
 	puts "Constant = #{constant.re} + #{constant.im}i"
 
 	output = []
@@ -54,7 +54,8 @@ loop do
 	for y in 0..height
 		for x in 0..width
 			number = screen.convert(x, y)
-			iterations = limit_detector.iterations(number)
+			constant = number
+			iterations = limit_detector.iterations(ComplexNumber.new(0.0, 0.0))
 			character = renderer.render(iterations)
 			output << character 
 			# puts "#{x}, #{y}, #{number}, #{iterations}, #{character}"
@@ -88,7 +89,7 @@ loop do
 		when "x"
 			break
 		else 
-			puts "Change fractal shape with wsad keys"
+			puts "Change fractal with wsad or ijkl keys"
 	end
 
 puts "Baiiiiieeee."
