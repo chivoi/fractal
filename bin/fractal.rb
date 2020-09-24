@@ -9,6 +9,7 @@ require "./lib/limit_detector"
 require "./lib/renderer"
 require "./lib/screen"
 
+
 #chars = "─━│┃┄┅┆┇┈┉┊┋┌┍┎┏┐┑┒┓└┕┖┗┘┙┚┛├┝┞┟┠┡┢┣┤┥┦┧┨┩┪┫┬┭┮┯┰┱┲┳┴┵┶┷┸┹┺┻┼┽┾┿╀╁╂╃╄╅╆╇╈╉╊╋"
 chars = "@MBHENR\#KWXDFPQASUZbdehx*8Gm&04LOVYkpq5Tagns69owz$CIu23Jcfry%1v7l+it[]{}?j|()=~!-/<>\"^_';,:`. ".reverse
 #chars = '.,-~:;=!*\#$@ '
@@ -45,7 +46,7 @@ loop do
 	puts "==============================="
 	puts "Created by chivoii and kirghoff"
 
-	puts "Press w,a,s,d to change shape, x to exit"
+	puts "W,A,S,D to move, I,J,K,L to change shape, x to exit"
 	puts "Constant = #{constant.re} + #{constant.im}i"
 
 	output = []
