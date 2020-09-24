@@ -45,7 +45,7 @@ loop do
 	puts "==============================="
 	puts "Created by chivoii and kirghoff"
 
-	puts "Press w,a,s,d to change shape, x to exit"
+	puts "Press w,a,s,d to move, i,j,k,l to change shape or x to exit"
 	puts "Constant = #{constant.re} + #{constant.im}i"
 
 	output = []
@@ -88,7 +88,7 @@ loop do
 		when "x"
 			break
 		else 
-			puts "Change fractal shape with wsad keys"
+			puts "Change fractal with wsad or ijkl keys"
 	end
 
 puts "Baiiiiieeee."
