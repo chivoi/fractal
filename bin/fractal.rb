@@ -46,7 +46,6 @@ loop do
 	puts "==============================="
 	puts "Created by chivoii and kirghoff"
 
-
 	puts "Press w,a,s,d to move, i,j,k,l to change shape, x to exit"
 	puts "Constant = #{constant.re} + #{constant.im}i"
 
@@ -90,7 +89,6 @@ loop do
 		when "x"
 			break
 		else 
-
 			puts "Valid keys: WASD to move, IJKL to change shape, x to exit"
 	end
 
