@@ -9,6 +9,7 @@ require "./lib/limit_detector"
 require "./lib/renderer"
 require "./lib/screen"
 
+
 #chars = "─━│┃┄┅┆┇┈┉┊┋┌┍┎┏┐┑┒┓└┕┖┗┘┙┚┛├┝┞┟┠┡┢┣┤┥┦┧┨┩┪┫┬┭┮┯┰┱┲┳┴┵┶┷┸┹┺┻┼┽┾┿╀╁╂╃╄╅╆╇╈╉╊╋"
 chars = "@MBHENR\#KWXDFPQASUZbdehx*8Gm&04LOVYkpq5Tagns69owz$CIu23Jcfry%1v7l+it[]{}?j|()=~!-/<>\"^_';,:`. ".reverse
 #chars = '.,-~:;=!*\#$@ '
@@ -45,6 +46,7 @@ loop do
 	puts "==============================="
 	puts "Created by chivoii and kirghoff"
 
+
 	puts "Press w,a,s,d to move, i,j,k,l to change shape, x to exit"
 	puts "Constant = #{constant.re} + #{constant.im}i"
 
@@ -53,7 +55,8 @@ loop do
 	for y in 0..height
 		for x in 0..width
 			number = screen.convert(x, y)
-			iterations = limit_detector.iterations(number)
+			constant = number
+			iterations = limit_detector.iterations(ComplexNumber.new(0.0, 0.0))
 			character = renderer.render(iterations)
 			output << character 
 			# puts "#{x}, #{y}, #{number}, #{iterations}, #{character}"
@@ -87,6 +90,7 @@ loop do
 		when "x"
 			break
 		else 
+
 			puts "Valid keys: WASD to move, IJKL to change shape, x to exit"
 	end
 
