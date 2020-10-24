@@ -9,6 +9,7 @@ require "./lib/limit_detector"
 require "./lib/renderer"
 require "./lib/screen"
 
+
 #chars = "─━│┃┄┅┆┇┈┉┊┋┌┍┎┏┐┑┒┓└┕┖┗┘┙┚┛├┝┞┟┠┡┢┣┤┥┦┧┨┩┪┫┬┭┮┯┰┱┲┳┴┵┶┷┸┹┺┻┼┽┾┿╀╁╂╃╄╅╆╇╈╉╊╋"
 chars = "@MBHENR\#KWXDFPQASUZbdehx*8Gm&04LOVYkpq5Tagns69owz$CIu23Jcfry%1v7l+it[]{}?j|()=~!-/<>\"^_';,:`. ".reverse
 #chars = '.,-~:;=!*\#$@ '
@@ -45,7 +46,11 @@ loop do
 	puts "==============================="
 	puts "Created by chivoii and kirghoff"
 
+<<<<<<< HEAD
 	puts "Press w,a,s,d to move, i,j,k,l to change shape, x to exit"
+=======
+	puts "Press w,a,s,d to move, i,j,k,l to change shape or x to exit"
+>>>>>>> 79d4c67577bdf2f72876e3df13955735e6fa86ed
 	puts "Constant = #{constant.re} + #{constant.im}i"
 
 	output = []
@@ -53,7 +58,8 @@ loop do
 	for y in 0..height
 		for x in 0..width
 			number = screen.convert(x, y)
-			iterations = limit_detector.iterations(number)
+			constant = number
+			iterations = limit_detector.iterations(ComplexNumber.new(0.0, 0.0))
 			character = renderer.render(iterations)
 			output << character 
 			# puts "#{x}, #{y}, #{number}, #{iterations}, #{character}"
@@ -87,7 +93,11 @@ loop do
 		when "x"
 			break
 		else 
+<<<<<<< HEAD
 			puts "Valid keys: WASD to move, IJKL to change shape, x to exit"
+=======
+			puts "Change fractal with wsad or ijkl keys"
+>>>>>>> 79d4c67577bdf2f72876e3df13955735e6fa86ed
 	end
 
 puts "Baiiiiieeee."
