@@ -5,6 +5,12 @@ You can move the fractal around the terminal window and change it's shape!
 
 ![Image of generated fractal](https://github.com/chivoi/fractal/blob/master/images/Fractal1.jpg)
 
-Here is a little demo:
+## Gems
 
-[![asciicast](https://asciinema.org/a/cRrYXmHi0JMztaeS5CQRersFg.svg)](https://asciinema.org/a/cRrYXmHi0JMztaeS5CQRersFg)
+The programme uses TTY Box and TTY Screen gems, check [the docs](https://ttytoolkit.org/) for more info.
+To install everything necessary with bundler, run this in your terminal
+```
+bundle install
+```
+
+Enjoy!
