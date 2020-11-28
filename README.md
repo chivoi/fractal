@@ -7,7 +7,7 @@ You can move the fractal around the terminal window and change it's shape!
 
 ## Gems
 
-The programme uses TTY Box and TTY Screen gems, check [the docs](https://ttytoolkit.org/) for more info.
+The programme uses TTY Box and TTY Screen gems, check [the docs](https://ttytoolkit.org/) for more info.</br>
 To install everything necessary with bundler, run this in your terminal
 ```
 bundle install
